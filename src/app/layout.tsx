@@ -15,7 +15,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body>
         {/* <InitColorSchemeScript attribute="class" /> */}
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <CCCProvider children={props.children}>
+            <CCCProvider>
               <Stack spacing={2} alignItems='center'>
                 <HeaderBar></HeaderBar>
                 {props.children}

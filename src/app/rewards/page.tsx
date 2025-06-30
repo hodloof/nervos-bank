@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Alert, Avatar, Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Container, IconButton, InputBase, Divider, Link, Paper, Tab, Typography, TextField, InputAdornment, Stack, Step, StepContent, Stepper, StepLabel } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Container, IconButton, InputBase, Divider, Link, Paper, Tab, Typography, TextField, InputAdornment, Stack, Step, StepContent, Stepper, StepLabel } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { ArrowBack, ArrowForward, Check, ExpandMore, Search } from '@mui/icons-material';
 import { BaseCell, CKBCell } from '../models/NormalCell';
@@ -149,7 +149,7 @@ export default function AssetsPage() {
                     <Typography variant="subtitle1" sx={{ color: 'text.secondary', mb: 1 }}>{formatTimestampStr(cell.block_timestamp)}</Typography>
                 </CardContent>
                 <CardActions>
-                    <Button component="a" href={`https://explorer.nervos.org/transaction/${cell.tx_hash}`} underline="none" target="_blank">Explorer</Button>
+                    <Button href={`https://explorer.nervos.org/transaction/${cell.tx_hash}`} sx={{ underline: 'none', target: '_blank' }}>Explorer</Button>
                     {cell.cell_type === 'normal' && cell.group === "Normal" ? <Button size="small" variant="contained" disabled={noHodlCell || cell.balance < ckbNeeded} onClick={() => {
                         setCellFee(cell);
                         handleNext();
@@ -178,7 +178,7 @@ export default function AssetsPage() {
                     <Typography variant="subtitle1" sx={{ color: 'text.secondary', mb: 1 }}>Last claimed: {formatTimestamp(cell.last_claimed_at)}</Typography>
                 </CardContent>
                 <CardActions>
-                    <Button component="a" href={`https://explorer.nervos.org/transaction/${cell.tx_hash}`} underline="none" target="_blank">Explorer</Button>
+                    <Button href={`https://explorer.nervos.org/transaction/${cell.tx_hash}`} sx={{ underline: 'none', target: '_blank' }}>Explorer</Button>
                     <Button size="small" variant="contained" disabled={noHodlCell} onClick={() => {
                         cell.selected = !cell.selected;
                         if (cell.selected) {
