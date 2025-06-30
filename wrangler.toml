@@ -1,0 +1,23 @@
+# Cloudflare Pages 配置文件
+
+# 构建命令 - 使用适合Windows和Linux的命令
+build = { command = "yarn install && yarn build", output_directory = "out" }
+
+# 环境变量
+[env.production]
+NODE_VERSION = "18"
+YARN_VERSION = "4.9.2"
+NODE_OPTIONS = "--max-old-space-size=4096"
+
+# 缓存配置
+[build.cache]
+includes = [
+  "node_modules/**",
+  ".yarn/cache/**",
+  ".next/cache/**"
+]
+
+# 路由配置
+[[routes]]
+pattern = "/*"
+script = "" # 静态站点不需要worker脚本

@@ -44,4 +44,5 @@ next-env.d.ts
 /.vscode/
 
 certificates
-/yarn.lock
+# 确保yarn.lock文件被提交到仓库
+# yarn.lock

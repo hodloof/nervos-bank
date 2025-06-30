@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   output: 'export',
   // 设置基本路径，如果部署在子目录则需要修改
   // basePath: '',
+  // 确保生成的静态文件可以在Cloudflare Pages上正常工作
+  trailingSlash: true,
   webpack: (config) => {
     // 增加 webpack 内存限制
     config.performance = {

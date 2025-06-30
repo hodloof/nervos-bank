@@ -1,0 +1,18 @@
+{
+  "build": {
+    "command": "yarn install && yarn build",
+    "output_directory": "out",
+    "environment": {
+      "NODE_VERSION": "18",
+      "YARN_VERSION": "4.9.2",
+      "NODE_OPTIONS": "--max-old-space-size=4096"
+    }
+  },
+  "cache": {
+    "includes": [
+      "node_modules/**",
+      ".yarn/cache/**",
+      ".next/cache/**"
+    ]
+  }
+}
