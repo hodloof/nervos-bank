@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
   },
   // 外部包配置（从experimental移动到这里）
   serverExternalPackages: [],
+  // 启用静态导出
+  output: 'export',
+  // 设置基本路径，如果部署在子目录则需要修改
+  // basePath: '',
   webpack: (config) => {
     // 增加 webpack 内存限制
     config.performance = {
